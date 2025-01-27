@@ -51,11 +51,11 @@
 <title>ET Schedule</title>
 <!-- Colors from https://www.pinterest.com/pin/323133342032115696/ -->
 <div
-	class="flex min-h-screen w-screen flex-col items-center justify-center bg-[#131313] text-[#F5F5F5]"
+	class="flex min-h-screen w-screen min-w-[325px] flex-col items-center justify-center bg-[#131313] text-[#F5F5F5] text-center"
 >
 	<!-- Calendar header (title & days/dates) -->
 	<div class="flex flex-col items-center justify-between w-[80%] min-w-[300px] h-[17.5%] min-h-[125px]">
-		<h1 class="text-4xl font-bold">Tutoring Schedule Week {calendar['week']}</h1>
+		<h1 class="text-4xl font-bold mb-4">Tutoring Schedule Week {calendar['week']}</h1>
 		<div class="grid grid-cols-5 w-full h-[70%]">
 			{#each calendar_days as day}
 				<div class={ day == 'fri'
@@ -70,6 +70,6 @@
 		</div>
 	</div>
 	<!-- Calendar body -->
-	<div class="flex flex-col items-center justify-center w-[80%] min-w-[300px] h-[62.5%] min-h-[425px]">
+	<div class="flex flex-col items-center justify-center w-[80%] min-w-[300px] h-[62.5%] min-h-[425px] mt-8 border border-red-600">
 	</div>
 </div>
