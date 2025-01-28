@@ -1,10 +1,33 @@
 {
-  "0": [
+  "0": [],
+  "168": [
     {
-      "start": 8445,
-      "end": 9000,
-      "title": "ULC Tutoring Hours"
+      "start": 12300,
+      "end": 12480,
+      "title": "ULC Tutoring Hours",
+      "in-person": true,
+      "zoom-link": "NA"
+    },
+    {
+      "start": 13590,
+      "end": 13770,
+      "title": "ULC Tutoring Hours",
+      "in-person": true,
+      "zoom-link": "NA"
+    },
+    {
+      "start": 15180,
+      "end": 15360,
+      "title": "ULC Tutoring Hours",
+      "in-person": true,
+      "zoom-link": "NA"
+    },
+    {
+      "start": 16590,
+      "end": 16770,
+      "title": "ULC Tutoring Hours",
+      "in-person": true,
+      "zoom-link": "NA"
     }
-  ],
-  "168": []
+  ]
 }

@@ -42,6 +42,7 @@ declare module '$env/static/private' {
 	export const ORIGINAL_XDG_CURRENT_DESKTOP: string;
 	export const MallocNanoZone: string;
 	export const COLOR: string;
+	export const TERM_SESSION_ID: string;
 	export const npm_config_noproxy: string;
 	export const npm_config_local_prefix: string;
 	export const ZSH: string;
@@ -53,10 +54,12 @@ declare module '$env/static/private' {
 	export const SSH_AUTH_SOCK: string;
 	export const __CF_USER_TEXT_ENCODING: string;
 	export const npm_execpath: string;
+	export const TERM_FEATURES: string;
 	export const VIRTUAL_ENV: string;
 	export const PAGER: string;
 	export const TMUX: string;
 	export const LSCOLORS: string;
+	export const TERMINFO_DIRS: string;
 	export const PATH: string;
 	export const npm_package_json: string;
 	export const _: string;
@@ -74,6 +77,7 @@ declare module '$env/static/private' {
 	export const npm_package_name: string;
 	export const LANG: string;
 	export const P9K_TTY: string;
+	export const ITERM_PROFILE: string;
 	export const npm_config_npm_version: string;
 	export const VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 	export const XPC_FLAGS: string;
@@ -82,10 +86,13 @@ declare module '$env/static/private' {
 	export const npm_package_version: string;
 	export const XPC_SERVICE_NAME: string;
 	export const VSCODE_INJECTION: string;
+	export const COLORFGBG: string;
 	export const HOME: string;
 	export const SHLVL: string;
 	export const VSCODE_GIT_ASKPASS_MAIN: string;
+	export const LC_TERMINAL_VERSION: string;
 	export const HOMEBREW_PREFIX: string;
+	export const ITERM_SESSION_ID: string;
 	export const npm_config_cache: string;
 	export const LESS: string;
 	export const LOGNAME: string;
@@ -97,6 +104,7 @@ declare module '$env/static/private' {
 	export const GIT_ASKPASS: string;
 	export const HOMEBREW_CELLAR: string;
 	export const INFOPATH: string;
+	export const LC_TERMINAL: string;
 	export const _P9K_SSH_TTY: string;
 	export const SECURITYSESSIONID: string;
 	export const VIRTUAL_ENV_PROMPT: string;
@@ -151,6 +159,7 @@ declare module '$env/dynamic/private' {
 		ORIGINAL_XDG_CURRENT_DESKTOP: string;
 		MallocNanoZone: string;
 		COLOR: string;
+		TERM_SESSION_ID: string;
 		npm_config_noproxy: string;
 		npm_config_local_prefix: string;
 		ZSH: string;
@@ -162,10 +171,12 @@ declare module '$env/dynamic/private' {
 		SSH_AUTH_SOCK: string;
 		__CF_USER_TEXT_ENCODING: string;
 		npm_execpath: string;
+		TERM_FEATURES: string;
 		VIRTUAL_ENV: string;
 		PAGER: string;
 		TMUX: string;
 		LSCOLORS: string;
+		TERMINFO_DIRS: string;
 		PATH: string;
 		npm_package_json: string;
 		_: string;
@@ -183,6 +194,7 @@ declare module '$env/dynamic/private' {
 		npm_package_name: string;
 		LANG: string;
 		P9K_TTY: string;
+		ITERM_PROFILE: string;
 		npm_config_npm_version: string;
 		VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 		XPC_FLAGS: string;
@@ -191,10 +203,13 @@ declare module '$env/dynamic/private' {
 		npm_package_version: string;
 		XPC_SERVICE_NAME: string;
 		VSCODE_INJECTION: string;
+		COLORFGBG: string;
 		HOME: string;
 		SHLVL: string;
 		VSCODE_GIT_ASKPASS_MAIN: string;
+		LC_TERMINAL_VERSION: string;
 		HOMEBREW_PREFIX: string;
+		ITERM_SESSION_ID: string;
 		npm_config_cache: string;
 		LESS: string;
 		LOGNAME: string;
@@ -206,6 +221,7 @@ declare module '$env/dynamic/private' {
 		GIT_ASKPASS: string;
 		HOMEBREW_CELLAR: string;
 		INFOPATH: string;
+		LC_TERMINAL: string;
 		_P9K_SSH_TTY: string;
 		SECURITYSESSIONID: string;
 		VIRTUAL_ENV_PROMPT: string;
