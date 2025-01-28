@@ -60,15 +60,25 @@
 		const week_min_start = week_hour * 60; // note that this is sun 00:00
 		const week_apts = appointments[week_hour];
 		// Clear all old elements
+		let last_promise = null;
 		for (let day of calendar_days) {
 			for (let i = 0; i < calendar[day]['appointments'].length; i++) {
 				if (calendar[day]['appointments'][i].filler) continue;
 				const elem = document.getElementById(calendar[day]['appointments'][i].start);
 				if (elem) {
-					elem.remove();
+					last_promise = animate(elem, {
+						opacity: [1, 0],
+						y: [0, 10],
+						duration: 0.5
+					}).then(() => {
+						elem.remove();
+					});
 				}
 			}
-			calendar[day]['appointments'] = []
+		}
+		if (last_promise) await last_promise;
+		for (let day of calendar_days) {
+			calendar[day]['appointments'] = [];
 		}
 		calendar = { ...calendar };
 		console.log(JSON.stringify(calendar['mon']['appointments']));
@@ -132,7 +142,7 @@
 		console.log(JSON.stringify(calendar['mon']['appointments']));
 	}
 
-	// Change the week
+	// Change the week, both in variable and in calendar
 	let lock = false;
 	async function changeWeek(week_num) {
 		if (lock) return;
