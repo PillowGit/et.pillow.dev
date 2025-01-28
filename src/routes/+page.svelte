@@ -184,8 +184,8 @@
 			>
 				<img src="/icons/left_arrow.svg" alt="arrow left" class={
 					(week <= 1)
-					? "transition invert md:h-9 sm:h-6 opacity-50"
-					: "transition invert md:h-9 sm:h-6 hover:opacity-80 hover:scale-110"
+					? "transition invert h-[6vh] min-h-6 opacity-50 aspect-square"
+					: "transition invert h-[6vh] min-h-6 hover:opacity-80 hover:scale-110 aspect-square"
 				}/>
 			</div>
 			<div class="md:text-4xl sm:text-2xl font-bold ml-2 mr-2">Tutoring Schedule Week {calendar['week']}</div>
@@ -206,8 +206,8 @@
 			>
 				<img src="/icons/left_arrow.svg" alt="arrow right" class={
 					(week >= Object.keys(appointments).length)
-					? "transition rotate-180 invert md:h-9 sm:h-6 opacity-50"
-					: "transition rotate-180 invert md:h-9 sm:h-6 hover:opacity-80 hover:scale-110"
+					? "transition rotate-180 invert h-[6vh] min-h-6 opacity-50 aspect-square"
+					: "transition rotate-180 invert h-[6vh] min-h-6 hover:opacity-80 hover:scale-110 aspect-square"
 				}/>
 			</div>
 		</div>
