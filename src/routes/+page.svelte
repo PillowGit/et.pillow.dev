@@ -55,11 +55,7 @@
 	}
 
 	// Function that does all of the loading and css for changing the week
-	async function displayWeek(week_num) {
-		const week_hour = (week_num - 1) * 168;
-		const week_min_start = week_hour * 60; // note that this is sun 00:00
-		const week_apts = appointments[week_hour];
-		// Clear all old elements
+	async function clearCalendar() {
 		let last_promise = null;
 		for (let day of calendar_days) {
 			for (let i = 0; i < calendar[day]['appointments'].length; i++) {
@@ -81,8 +77,11 @@
 			calendar[day]['appointments'] = [];
 		}
 		calendar = { ...calendar };
-		console.log(JSON.stringify(calendar['mon']['appointments']));
-		// Add new elements
+	}
+	async function updateAppointments() {
+		const week_hour = (week - 1) * 168;
+		const week_min_start = week_hour * 60; // note that this is sun 00:00
+		const week_apts = appointments[week_hour];
 		for (let day of calendar_days) {
 			const day_at_9_am = calendar_min_offsets[day] + week_min_start + 9*60;
 			const day_at_8_pm = calendar_min_offsets[day] + week_min_start + 20*60;
@@ -136,7 +135,7 @@
 			css += ";";
 			const week_elem = document.getElementById(day);
 			week_elem.setAttribute("style", css);
-			calendar['week'] = week_num;
+			calendar['week'] = week;
 			calendar[day]['date'] = toDate(calendar_min_offsets[day] + week_min_start);
 		}
 		calendar = {...calendar};
@@ -145,17 +144,19 @@
 
 	// Change the week, both in variable and in calendar
 	let lock = false;
-	async function changeWeek(week_num) {
+	async function changeWeek(week_num, initial=false) {
 		if (lock) return;
 		lock = true;
-		await displayWeek(week_num);
+		if (!initial) await clearCalendar();
+		await new Promise(r => setTimeout(r, 200));
 		week = week_num;
+		await updateAppointments();
 		lock = false;
 	}
 
 	onMount(() => {
 		// todo: Calculate week, call week change function
-		changeWeek(week);
+		changeWeek(week, true);
 	});
 </script>
 
@@ -240,7 +241,7 @@
 						: "w-full h-full border-b-2 border-b-[#f5f5f528] border-dotted"}></div>
 					{:else}
 						<!-- Actual appointments -->
-						<MotionFadeIn selfId={appointment['start']}>
+						<MotionFadeIn selfId={appointment['start']} duration={0.5}>
 						<div class="h-full w-full rounded-md" id={appointment['start']}>
 							<div class="h-full w-full bg-[#4A4E69] rounded-lg flex flex-col items-start justify-start">
 								<h3 class="md:ml-2 mt-2 font-bold md:text-base text-xs">{appointment['title']}</h3>
