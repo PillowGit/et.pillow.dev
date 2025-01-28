@@ -137,6 +137,7 @@
 			const week_elem = document.getElementById(day);
 			week_elem.setAttribute("style", css);
 			calendar['week'] = week_num;
+			calendar[day]['date'] = toDate(calendar_min_offsets[day] + week_min_start);
 		}
 		calendar = {...calendar};
 		console.log(JSON.stringify(calendar['mon']['appointments']));
