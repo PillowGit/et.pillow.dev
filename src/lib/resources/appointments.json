@@ -59,5 +59,35 @@
       "in-person": true,
       "zoom-link": "NA"
     }
+  ],
+  "504": [
+    {
+      "start": 32460,
+      "end": 32640,
+      "title": "CPSC 121 L Tutoring",
+      "in-person": true,
+      "zoom-link": "NA"
+    },
+    {
+      "start": 32700,
+      "end": 32820,
+      "title": "CPSC 121 L Tutoring",
+      "in-person": true,
+      "zoom-link": "NA"
+    },
+    {
+      "start": 35340,
+      "end": 35520,
+      "title": "CPSC 121 L Tutoring",
+      "in-person": true,
+      "zoom-link": "NA"
+    },
+    {
+      "start": 35580,
+      "end": 35700,
+      "title": "CPSC 121 L Tutoring",
+      "in-person": true,
+      "zoom-link": "NA"
+    }
   ]
 }
