@@ -155,7 +155,35 @@
 	}
 
 	onMount(() => {
-		// todo: Calculate week, call week change function
+		// Generate times for this week
+		/* 
+		const dates = [
+			new Date(2025, 2, 3, 14, 0),
+			new Date(2025, 2, 3, 17, 0),
+			new Date(2025, 2, 4, 11, 0),
+			new Date(2025, 2, 4, 14, 0),
+			new Date(2025, 2, 5, 13, 0),
+			new Date(2025, 2, 5, 16, 0),
+			new Date(2025, 2, 6, 12, 0),
+			new Date(2025, 2, 6, 14, 0),
+		];
+		const newapts = [];
+		for (let i = 0; i < dates.length; i+=2) {
+			newapts.push(
+    		{
+    		  "start": toEpoch(dates[i]),
+    		  "end": toEpoch(dates[i+1]),
+    		  "title": "CPSC 121 L Tutoring",
+    		  "in-person": true,
+    		  "zoom-link": "NA"
+    		}
+			);
+		}
+		const entry = {};
+		entry[toString(week*168)] = newapts;
+		alert(JSON.stringify(entry));
+		navigator.clipboard.writeText(JSON.stringify(entry));
+		*/
 		changeWeek(week, true);
 	});
 </script>
